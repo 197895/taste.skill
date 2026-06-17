@@ -1,0 +1,18 @@
+{
+  "name": "taste-skill",
+  "displayName": "taste.skill",
+  "description": "Strict research-paper triage skill for novelty, evidence hardness, baseline fairness, and long-term impact.",
+  "version": "1.0.0",
+  "author": {
+    "name": "taste.skill maintainers"
+  },
+  "repository": "https://github.com/OWNER/taste.skill",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "paper-review",
+    "paper-triage",
+    "novelty",
+    "academic"
+  ]
+}

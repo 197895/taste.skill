@@ -1,0 +1,27 @@
+{
+  "name": "taste-skill",
+  "owner": {
+    "name": "taste.skill maintainers"
+  },
+  "description": "Strict paper-triage skills for Claude Code.",
+  "plugins": [
+    {
+      "name": "taste-skill",
+      "displayName": "taste.skill",
+      "source": "./",
+      "description": "Strict research-paper triage: Keep, Borderline, or Ban.",
+      "version": "1.0.0",
+      "author": {
+        "name": "taste.skill maintainers"
+      },
+      "category": "research",
+      "tags": [
+        "research",
+        "paper-review",
+        "paper-triage",
+        "novelty",
+        "academic"
+      ]
+    }
+  ]
+}

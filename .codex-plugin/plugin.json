@@ -1,0 +1,35 @@
+{
+  "name": "taste-skill",
+  "version": "1.0.0",
+  "description": "Strict research-paper triage skill for novelty, evidence hardness, baseline fairness, and long-term impact.",
+  "author": {
+    "name": "taste.skill maintainers"
+  },
+  "repository": "https://github.com/OWNER/taste.skill",
+  "license": "MIT",
+  "keywords": [
+    "research",
+    "paper-review",
+    "paper-triage",
+    "novelty",
+    "academic"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "taste.skill",
+    "shortDescription": "Strict paper triage: Keep, Borderline, or Ban.",
+    "longDescription": "Use taste.skill to judge whether a research paper has real methodological value, hard evidence, fair baselines, and long-term influence potential while ignoring prestige signals.",
+    "developerName": "taste.skill maintainers",
+    "category": "Research",
+    "capabilities": [
+      "Research",
+      "Analysis"
+    ],
+    "defaultPrompt": [
+      "Use taste.skill to strictly evaluate this paper.",
+      "Use taste.skill to decide whether this paper is Keep, Borderline, or Ban.",
+      "Use taste.skill to compare this paper against related work and baselines."
+    ],
+    "brandColor": "#D92D20"
+  }
+}
