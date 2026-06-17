@@ -1,6 +1,6 @@
 ---
 name: taste
-description: Strictly triage research papers for real methodological novelty, hard evidence, baseline fairness, and long-term impact. Use for arXiv triage, paper review, related-work comparison, and Keep / Borderline / Ban decisions while ignoring author, institution, venue, and citation prestige.
+description: Strictly triage research papers for real methodological novelty, hard evidence, baseline fairness, and long-term impact. Use for arXiv triage, paper review, related-work comparison, and A / B / C / Ban decisions while ignoring author, institution, venue, and citation prestige.
 ---
 
 # taste.skill
@@ -85,7 +85,7 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 从单步视觉生成变成可持续更新的 world state simulation；
 * 从静态推理策略变成可适应真实系统状态的调度问题。
 
-这一级别才有资格支撑 A- / A 级评价。
+这一级别才有资格拿创新加分（+1 ~ +3），也才有资格进 A 档。
 
 ---
 
@@ -102,7 +102,7 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 用 object-centric memory 维护交互后的场景状态；
 * 用可插拔 kernel 或 serving framework 把新抽象真正落地。
 
-这类机制可以支撑 B+ / A-，具体取决于方法是否干净、实验是否硬、是否有强 baseline 对比。
+这类机制本身不触发创新加分，但可以作为“方法审美干净”的正证据。能否进 B/A 取决于实验硬度和 baseline 强度。
 
 ---
 
@@ -111,7 +111,6 @@ description: Strictly triage research papers for real methodological novelty, ha
 这类东西有用，但一般不能算深创新。必须明确降权。
 
 典型例子：
-
 
 * threshold-based mode switching；
 * priority scheduling；
@@ -124,9 +123,7 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 经验性的 fallback 策略；
 * 各种为了减少 latency、提高 hit rate、提高 cache 命中率的局部调度。
 
-这些可以提升系统性能，但不能因为它们就把论文评成 A 类方法工作。
-
-
+这些可以提升系统性能，但不能因为它们就把论文评成 A 类方法工作。若论文的核心贡献主要是这一层，按 weak 点扣分。
 
 ---
 
@@ -142,7 +139,7 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 核心贡献主要是阈值、调度、压缩、优先级、资源分配；
 * 论文的价值主要来自“这个故事讲得合理”，而不是方法本身有可迁移的新抽象。
 
-这类论文可以是有用的系统工作，但通常只能给 B / B-，除非它解决的问题本身非常重要，并且系统完成度和实验覆盖非常强。
+这类论文可以是有用的系统工作，但通常封顶 C 档；如果问题非常重要、系统完成度和实验覆盖极强，最高也只能到 B 档下沿，绝不可进 A。
 
 ---
 
@@ -267,9 +264,9 @@ description: Strictly triage research papers for real methodological novelty, ha
 
 ---
 
-# 四、强 ban 规则
+# 四、扣分项（weak 点）
 
-命中多个就直接 ban 或大幅降级。
+每命中一条，扣 1～2 分；严重者可叠加扣分。命中多条直接跌档甚至 ban。
 
 ## 4.1 换壳迁移
 
@@ -281,6 +278,8 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 但 X 在相邻领域已经很成熟；
 * 没有解释为什么 Y 需要新的设计；
 * 只换了输入输出形式，核心方法没变。
+
+扣分：-1 ~ -2。
 
 ---
 
@@ -298,6 +297,8 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 结果只好一点点；
 * 没有改变问题表述。
 
+扣分：-1 ~ -2。
+
 ---
 
 ## 4.3 方法很丑
@@ -312,6 +313,8 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 迁移到新模型需要重新调一堆东西。
 
 这种即使有效，也只能算工程 paper，不能算高审美方法。
+
+扣分：-1 ~ -2。
 
 ---
 
@@ -329,6 +332,8 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 没有 ablation 证明核心 idea；
 * 只比弱 baseline 强；
 * 只在作者自己设定下强。
+
+扣分：-1 ~ -2。
 
 ---
 
@@ -348,6 +353,8 @@ description: Strictly triage research papers for real methodological novelty, ha
 
 * 额外给一张 GPU 后快了 30%，这不是同硬件算法加速，而是“多资源换低延迟”。可以有价值，但必须明说并降权。
 
+扣分：-1 ~ -2；性质恶劣（伪装资源为算法收益）直接 -2 并触发 ban 审查。
+
 ---
 
 ## 4.6 影响面太窄
@@ -363,11 +370,13 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 一个特殊 workload distribution；
 * 一个作者自建 pipeline。
 
+扣分：-1 ~ -2。
+
 ---
 
-# 五、强保留规则
+# 五、加分项（特别好的创新点）
 
-以下信号越多，评分越高。
+只有真正强的正证据才能加分。每条 +1 ~ +3。加分要吝啬：拿不准就不加。
 
 ## 5.1 解决的是未来会更严重的问题
 
@@ -383,9 +392,11 @@ description: Strictly triage research papers for real methodological novelty, ha
 * embodied AI 的真实交互数据稀缺；
 * 机器人动作和视觉模拟之间的表示鸿沟。
 
+加分：+1（问题真实且趋势明确）。这只是“问题值得做”，不等于方法做得好，单这条不触发 +2/+3。
+
 ---
 
-## 5.2 改变 trade-off
+## 5.2 改变 trade-off（核心创新信号）
 
 优秀工作经常不是“多 1%”，而是改变约束关系：
 
@@ -395,6 +406,8 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 原本高加速必掉质量，现在高加速还能保持质量；
 * 原本只能 one-shot generation，现在能 closed-loop state update；
 * 原本只能静态场景，现在能持续更新世界状态。
+
+加分：+1 ~ +3。这是触发 A 档的主要正证据，必须有清晰的新抽象支撑，不能只是把已有约束换了个说法。
 
 ---
 
@@ -416,6 +429,8 @@ description: Strictly triage research papers for real methodological novelty, ha
 
 如果只在简单区间赢，价值有限。
 
+加分：+1（困难区间有真实 wall-clock 数据支撑）；仅报 average / proxy metric 不给加。
+
 ---
 
 ## 5.4 核心机制有 ablation 支撑
@@ -424,11 +439,13 @@ description: Strictly triage research papers for real methodological novelty, ha
 
 > 去掉核心模块后，收益还在吗？
 
-如果去掉核心模块仍然差不多，那核心 claim 站不住。
+如果去掉核心模块仍然差不多，那核心 claim 站不住，本条不给加，且按 4.4 扣分。
+
+加分：+1（ablation 干净地证明核心模块必要、收益来自核心 idea 而非堆 trick）。
 
 ---
 
-## 5.5 后续可组合
+## 5.5 后续可组合 / 绕不开
 
 强工作通常能和其他路线组合：
 
@@ -441,28 +458,53 @@ description: Strictly triage research papers for real methodological novelty, ha
 
 可组合性越强，长期价值越高。
 
+加分：+1（有明确组合路径且不与核心机制冲突）；+2 需要给出已验证的组合实验或后续工作已沿用的证据。
+
 ---
 
-# 六、评分标准
+# 六、评分标准（10 分制，4 档）
 
-## A / A-
+## 6.1 起评与计算规则
+
+* **起评分 = 0**。论文从零开始挣分，不赠一分。这对应“默认 ban、先怀疑后放行”的最严立场：拿不到正证据就是 ban。
+* **五维基础分（每维 0 ~ +1，共最高 +5）**，逐项判断是否达到“足够强”的门槛，达不到就是 0，不允许给半分凑数：
+  1. 问题真实性与重要性；
+  2. 方法新抽象 / 问题重定义（Level 1）；
+  3. 实验硬度（wall-clock、困难区间、absolute latency）；
+  4. baseline 公平性与强度；
+  5. 方法审美与可迁移性。
+* **扣分项（weak 点）**：命中第四章每条 -1 ~ -2，可叠加，下不封底（可扣到 0 以下）。
+* **加分项（特别好的创新点）**：命中第五章每条 +1 ~ +3，可叠加，可把总分推到 10 以上。
+* **分数封顶规则**：若方法核心属于 Level 3（优化 trick）或 Level 4（patch stack），即使五维和加分都高，**最终分也硬封顶在 9 分（最高 B）**，不可进 A。A 档必须由 Level 1 核心抽象支撑。
+
+## 6.2 档位映射
+
+| 总分 | 档位 | 含义 |
+| --- | --- | --- |
+| **> 10** | **A** | 强保留。新抽象、效果硬、baseline 强、绕不开、可迁移可组合。 |
+| **8 ~ 9** | **B** | 保留但不吹。问题真实、工程完成度高、效果强，但原创性一般或依赖特定前提。 |
+| **6 ~ 7** | **C** | 边缘。有用但主要是拼装，影响面窄，不够干净。 |
+| **< 6** | **Ban** | 不建议追。小改、方法丑、结果弱、baseline 不公、堆 heuristic。 |
+
+## 6.3 档位定义
+
+### A
 
 强保留。
 
 条件：
 
-* 有清晰新抽象；
-* 不是换壳；
+* 有清晰新抽象（Level 1），不是换壳；
 * 不是靠调参或 patch stack 赢；
-* 效果硬；
-* 和强 baseline 比仍然有优势；
+* 效果硬，在困难区间仍有优势；
+* 和强 baseline 比仍然领先；
 * 后续工作很可能绕不开；
 * 有理论、机制或系统解释；
 * 可迁移、可组合、可扩展。
 
----
+> A 档默认不给。起评为 0，要越过 10 分门槛必须：五维基础分拿满（+5），且核心创新（5.2）拿到 +2 以上、并叠加多项其它加分（5.3 / 5.4 / 5.5）补足到 >10，且无致命 weak 点。即“几乎每一维都强 + 有改变 trade-off 的核心抽象 + 实验硬 + ablation 干净 + 可组合”全占，才允许给 A。
 
-## B+ / B
+### B
 
 保留，但不要吹。
 
@@ -471,14 +513,12 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 问题真实；
 * 工程完成度高；
 * 效果强；
-* 但方法原创性一般；
+* 但方法原创性一般（Level 2 / 强系统化）；
 * 或依赖特定系统前提；
 * 或核心抽象不错，但实现里 trick 较多；
 * 或实验强但 baseline 有缺口。
 
----
-
-## B- / C+
+### C
 
 边缘。
 
@@ -491,9 +531,7 @@ description: Strictly triage research papers for real methodological novelty, ha
 * 方法主要是已有组件的组合；
 * 需要很多超参或特定系统设定。
 
----
-
-## C / Ban
+### Ban
 
 不建议追。
 
@@ -516,11 +554,11 @@ description: Strictly triage research papers for real methodological novelty, ha
 
 ## 结论
 
-Keep / Borderline / Ban
+A / B / C / Ban
 
-## 评级
+## 分数
 
-A / A- / B+ / B / B- / C
+X / 10+（写出计算：起评 0 + 五维明细 + 加分明细 - 扣分明细 = 总分，并说明是否触发封顶）
 
 ## 一句话判断
 
@@ -572,6 +610,8 @@ A / A- / B+ / B / B- / C
 * 支撑机制；
 * 优化 trick；
 * 特定故事下的工程补丁。
+
+并标注其创新层级（Level 1 / 2 / 3 / 4），说明是否触发封顶。
 
 ---
 
@@ -675,6 +715,6 @@ A / A- / B+ / B / B- / C
 4. 它的收益是否来自强机制，而不是弱 baseline 或工程调参？
 5. 如果后续工作不引用它，会不会显得不完整？
 
-只有当答案足够强时，才允许 Keep。
+只有当答案足够强、且总分 > 10 时，才允许给 A。
 
-否则，ban。
+否则按分数归档：8~9 给 B，6~7 给 C，低于 6 直接 ban。
