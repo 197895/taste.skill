@@ -4,15 +4,16 @@
 
 ### “当一个思想真正变得”优美”时，它往往已经经过了反复的打磨与精简，并以最优雅的形式呈现出来。”
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-green.svg)
-![AgentSkills](https://img.shields.io/badge/AgentSkills-compatible-purple.svg)
-![Claude Code](https://img.shields.io/badge/Claude%20Code-ready-orange.svg)
-![Hermes](https://img.shields.io/badge/Hermes-ready-blue.svg)
-![OpenClaw](https://img.shields.io/badge/OpenClaw-ready-black.svg)
-![Codex](https://img.shields.io/badge/Codex-ready-black.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://python.org)
+[![AgentSkills](https://img.shields.io/badge/AgentSkills-Standard-green)](https://agentskills.io)
+[![Stars](https://img.shields.io/github/stars/197895/taste.skill?style=social)](https://github.com/197895/taste.skill/stargazers)
 
-![Discord](https://img.shields.io/badge/Discord-Join-5865F2.svg?logo=discord&logoColor=white)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Skill-blueviolet)](https://docs.anthropic.com/en/docs/claude-code)
+[![Hermes](https://img.shields.io/badge/Hermes-Skill-orange)](https://hermes-agent.nousresearch.com/)
+[![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill-teal)](https://docs.openclaw.ai/)
+[![Codex](https://img.shields.io/badge/Codex-Skill-black)](https://developers.openai.com/codex)
+
 
 </div>
 
@@ -24,7 +25,7 @@
 
 🧨 你受够了换壳迁移、小修小补、调参 trick、工程 patch stack，却还被包装成“重大创新”？
 
-🧠 你需要一个真正有 taste 的论文筛选器！培养论文审美，从批判论文开始。**该留就留，该 ban 就 ban。**
+🧠 你需要一个真正有 taste 的论文筛选器！培养论文审美，从用批判的眼光看论文开始。**该留就留，该 ban 就 ban。**
 
 ### ✨ 一切尽在 taste.skill。
 
