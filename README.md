@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔪 taste.skill（论文审美.skill）
+# 🔪 taste.skill（科研审美.skill）
 
 ### “当一个思想真正变得”优美”时，它往往已经经过了反复的打磨与精简，并以最优雅的形式呈现出来。”
 
@@ -19,7 +19,7 @@
 
 ---
 
-🧑‍🔬 你每天刷 arXiv，被浩如烟海的 “novel / efficient / SOTA” 吓哭了？
+🧑‍🔬 你每天刷 arXiv，被铺天盖地的 “novel / efficient / SOTA” 吓哭了？
 
 📈 你不想看作者机构、会议 title、只想知道：这份工作是否足够优雅？对培养我的论文审美是否有帮助？
 
@@ -31,7 +31,7 @@
 
 `taste.skill` 不是论文总结器。
 
-它是一个 **严格论文审美评估器**。
+它是一个 **严格科研审美评估器**。
 
 它会帮你判断一篇论文：
 
@@ -82,12 +82,13 @@ Agent 应该自动识别当前宿主的 skills 目录，完成安装和入口加
 
 
 #### Hermes
+```bash
 hermes skills install 197895/taste.skill/skills/taste
-
+```
 
 #### OpenClaw
 ```bash
-openclaw skills install taste
+clawhub install taste-paper
 ```
 
 ---
